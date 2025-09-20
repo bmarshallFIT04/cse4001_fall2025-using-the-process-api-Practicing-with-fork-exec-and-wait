@@ -79,7 +79,7 @@ int main(void) {
     return 0;
 }
 ```
-![Q1 output]("q1 output.png")
+![Q1 output]("q1_output.png")
 
 *The child starts with the same value of x as the parent before fork is called. After the fork, the parent and child have separate addresses. Because they are modifying separate copies, when the child sets x=200, and the parent sets x=300, they don’t affect each other.*
 
