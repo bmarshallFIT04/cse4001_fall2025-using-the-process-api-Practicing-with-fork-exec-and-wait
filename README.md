@@ -364,5 +364,5 @@ int main(void) {
 ```
 ![Q7 output](q7_output.png)
 
-*The program forks the child and closes its standard output file descriptor. Afterwards, any attempt to print in the child produces no visible output because stdout is no longer valid. The parent, which still has its own open stdout, can continue to print. *
+*The program forks the child and closes its standard output file descriptor. Afterwards, any attempt to print in the child produces no visible output because stdout is no longer valid. The parent, which still has its own open stdout, can continue to print.*
 
