@@ -79,7 +79,7 @@ int main(void) {
     return 0;
 }
 ```
-![Q1 output]("q1 output.png")
+![Q1 output](q1_output.png)
 
 *The child starts with the same value of x as the parent before fork is called. After the fork, the parent and child have separate addresses. Because they are modifying separate copies, when the child sets x=200, and the parent sets x=300, they don’t affect each other.*
 
@@ -122,7 +122,7 @@ int main(void) {
     return 0;
 }
 ```
-![Q2 output]("q2 output.png")
+![Q2 output](q2_output.png)
 
 *Q2.output is opened before calling fork(), allowing the parent and child to inherit the same file descriptor. Since they share the same open file, the writes go to the same file. When they are writing concurrently the output can either appear in different orders, or get mixed together in the file.*
 
@@ -175,7 +175,7 @@ int main(void) {
     return 0;
 }
 ```
-![Q3 output]("q3 output.png")
+![Q3 output](q3_output.png)
 
 *The program forks a child process that prints “hello” and a pipe is used so that parent is blocked until the child writes a single byte. This guarantees that the child always prints first without using wait().*
 
@@ -237,7 +237,7 @@ int main(int argc, char *argv[]) {
     return 0;
 }
 ```
-![Q4 output]("q4 output.png")
+![Q4 output](q4_output.png)
 
 *The program forks a child and replaces the child with /bin/ls using one of the exec*() variants. There are many different variants because each handles different programming needs when running a program process: 
 l – arguments are passed as a fixed list
@@ -278,7 +278,7 @@ int main(void) {
     return 0;
 }
 ```
-![Q5 output]("q5 output.png")
+![Q5 output](q5_output.png)
 
 *The program forks a child process and the parent calls wait(), which pauses its execution until the child finishes. If wait() is used in the child, it fails immediately because it has no children of its own.*
 
@@ -326,7 +326,7 @@ int main(void) {
   return 0;
 }
 ```
-![Q6 output]("q6 output.png")
+![Q6 output](q6_output.png)
 
 *The program forks two children and the parent waits for the child based on its PID. Waitpid() allows the parent to control the order it pauses execution for and collect information, which is useful when managing multiple children that need to be tracked.*
 
@@ -361,7 +361,7 @@ int main(void) {
     return 0;
 }
 ```
-![Q7 output]("q7 output.png")
+![Q7 output](q7_output.png)
 
 *The program forks the child and closes its standard output file descriptor. Afterwards, any attempt to print in the child produces no visible output because stdout is no longer valid. The parent, which still has its own open stdout, can continue to print. *
 
